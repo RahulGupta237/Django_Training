@@ -1,3 +1,5 @@
+
+Week 2nd Task
 Setting Up The Project Now run the following command in your shell to create a Django project.
 
 django-admin startproject DjangoProject
@@ -14,3 +16,4 @@ cd SolveRahul python manage.py startapp Blog These will create an app named blog
 python manage.py migrate python manage.py makemigrations
 
 python manage.py runserver
+
