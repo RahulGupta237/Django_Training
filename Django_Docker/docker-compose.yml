@@ -9,12 +9,12 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-        - pgdb
-  pgdb:
-      image: mysql
-      container_name: mysql
-      environment:
-              [-MYSQL_DATABASE=mysql,
-              -MYSQL_USER=mysql,
-              -MYSQL_PASSWORD="Rahul@237"]
+        - mdb
+  mdb:
+    image: mysql
+    container_name: mysql
+    environment:
+            [-MYSQL_DATABASE=mysql,
+            -MYSQL_USER=mysql,
+            -MYSQL_PASSWORD="Rahul@237"]
    
