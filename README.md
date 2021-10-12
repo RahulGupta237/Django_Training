@@ -15,3 +15,4 @@ $ git commit -m "my first commit .gitignore.txt"
 $ git remote add origin git@github.com:RahulGupta237/Django_Training.git
 $ git push -u origin main
 $ touch Readme.md
+I want to delete docker bcz already exit in other branches
