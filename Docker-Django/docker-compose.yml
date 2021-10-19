@@ -8,3 +8,29 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+    environment:
+      - DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1
+      - CELERY_BROKER=redis://127.0.0.1:6379/0
+      - CELERY_BACKEND=redis://127.0.0.1:6379/0
+    depends_on:
+      - mdb
+      - redis
+  celery:
+    build: .
+    command:  celery worker  Kellton -1 info
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+      - redis
+  mdb:
+    image: mysql
+    container_name: db_mysql
+    environment:
+      [ -MYSQL_DATABASE=mysql,
+        -MYSQL_USER=mysql,
+        -MYSQL_PASSWORD="Rahul@237" ]
+  redis:
+    image: "redis:alpine"
+
