@@ -1,4 +1,4 @@
-# yourvenv/cfehome/celery.py
+from __future__ import absolute_import, unicode_literals
 import os
 from celery import Celery
 
@@ -10,6 +10,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Kellton.settings')
 ## Get the base REDIS URL, default to redis' default
 BASE_REDIS_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379')
 
+#app = Celery('Kellton')
 app = Celery('Kellton')
 
 # Using a string here means the worker don't have to serialize
@@ -19,4 +20,4 @@ app = Celery('Kellton')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
 # Load task modules from all registered Django app configs.
-app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
+app.autodiscover_tasks()
