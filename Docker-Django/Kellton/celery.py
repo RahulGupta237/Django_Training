@@ -1,6 +1,4 @@
 # yourvenv/cfehome/celery.py
-from __future__ import absolute_import, unicode_literals # for python2
-
 import os
 from celery import Celery
 

@@ -1,8 +1,8 @@
+from __future__ import absolute_import, unicode_literals
 import random
 from celery import shared_task
-from __future__ import absolute_import, unicode_literals
 
-@shared_task(name="sum_two_numbers")
+@shared_task
 def add(x, y):
     return x + y
 
